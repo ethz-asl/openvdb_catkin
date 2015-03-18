@@ -5,22 +5,19 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_PREFIX}")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR})
 
 find_package(catkin_simple REQUIRED)
-find_package(PythonLibs REQUIRED)
 find_package(Boost REQUIRED)
-find_package(OpenEXR REQUIRED)
-find_package(TBB REQUIRED)
 find_package(CppUnit REQUIRED)
+find_package(PythonLibs REQUIRED)
 find_package(PythonInterp REQUIRED)
+find_package(TBB REQUIRED)
+find_package(OpenEXR REQUIRED)
 
-include_directories(
-  include
-  ${catkin_INCLUDE_DIRS}
-  ${BOOST_INCLUDE_DIR}
-  ${PYTHON_INCLUDE_DIR}
-  ${OPENEXR_INCLUDE_DIR}
-  ${TBB_INCLUDE_DIR}
-  ${CPPUNIT_INCLUDE_DIR}
-)
+include_directories(include)
+include_directories(${OPENEXR_INCLUDE_DIR})
+include_directories(${CPPUNIT_INCLUDE_DIR})
+include_directories(${PYTHON_INCLUDE_DIR})
+include_directories(${BOOST_INCLUDE_DIR})
+include_directories(${TBB_INCLUDE_DIRS})
 
 catkin_simple()
 
