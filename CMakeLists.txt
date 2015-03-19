@@ -1,25 +1,11 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(openvdb_catkin)
 
+find_package(catkin_simple REQUIRED)
+catkin_simple()
+
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_PREFIX}")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
-
-find_package(catkin_simple REQUIRED)
-find_package(Boost REQUIRED)
-find_package(CppUnit REQUIRED)
-find_package(PythonLibs REQUIRED)
-find_package(PythonInterp REQUIRED)
-find_package(TBB REQUIRED)
-find_package(OpenEXR REQUIRED)
-
-include_directories(include)
-include_directories(${OPENEXR_INCLUDE_DIR})
-include_directories(${CPPUNIT_INCLUDE_DIR})
-include_directories(${PYTHON_INCLUDE_DIR})
-include_directories(${BOOST_INCLUDE_DIR})
-include_directories(${TBB_INCLUDE_DIRS})
-
-catkin_simple()
 
 include(ExternalProject)
 
@@ -27,11 +13,9 @@ file(MAKE_DIRECTORY ${CATKIN_DEVEL_PREFIX}/include/openvdb)
 
 ExternalProject_Add(openvdb_src
   URL https://github.com/dreamworksanimation/openvdb/archive/v3.0.0.zip
+  CMAKE_ARGS -DCMAKE_MODULE_PATH=${CMAKE_MODULE_PATH} -DCMAKE_INSTALL_PREFIX=${CATKIN_DEVEL_PREFIX}
   UPDATE_COMMAND ""
-  PATCH_COMMAND ""
-  CONFIGURE_COMMAND ""
-  BUILD_COMMAND cd ../openvdb_src/openvdb && make -j8
-  INSTALL_COMMAND cd ../openvdb_src/openvdb && make install -j8
+  PATCH_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/cmake/CMakeLists.txt ../openvdb_src/
 )
 
 cs_add_library(${PROJECT_NAME} src/dependency_tracker.cc)
