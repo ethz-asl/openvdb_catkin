@@ -9,7 +9,7 @@ find_package(PythonInterp REQUIRED)
 find_package(TBB REQUIRED)
 find_package(OpenEXR REQUIRED)
 find_package(Log4cplus REQUIRED)
-find_package(Zlib REQUIRED)
+find_package(ZLIB REQUIRED)
 
 include_directories(include)
 include_directories(${OPENEXR_INCLUDE_DIRS})
