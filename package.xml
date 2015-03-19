@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package>
+  <name>openvdb_catkin</name>
+  <version>0.0.0</version> 
+  <description>openvdb_catkin</description>
+  <maintainer email="simon.lynen@gmail.com">Simon Lynen</maintainer>
+  <maintainer email="marius.b.fehr@gmail.com">Marius Fehr</maintainer>
+  <author>Marius Fehr</author>
+  <license>New BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>catkin_simple</buildtool_depend>
+  
+  <build_depend>boost</build_depend>
+</package>
