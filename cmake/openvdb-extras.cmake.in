@@ -1,3 +1,4 @@
 # This overrides the dependency tracker with the OpenVDB library file.
 file(GLOB OpenVDBLibraries @CATKIN_DEVEL_PREFIX@/lib/libopenvdb*)
-set( @PROJECT_NAME@_LIBRARIES ${OpenVDBLibraries})
+set( @PROJECT_NAME@_LIBRARIES ${OpenVDBLibraries} tbb Half)
+
