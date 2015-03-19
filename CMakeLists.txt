@@ -4,7 +4,6 @@ project(openvdb_catkin)
 find_package(catkin_simple REQUIRED)
 catkin_simple()
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_PREFIX}")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 include(ExternalProject)
