@@ -12,16 +12,17 @@ find_package(Log4cplus REQUIRED)
 find_package(ZLIB REQUIRED)
 
 include_directories(include)
-include_directories(${OPENEXR_INCLUDE_DIRS})
+include_directories(${CPPUNIT_INCLUDE_DIRS})
+include_directories(${OPENEXR_INCLUDE_PATHS})
 include_directories(${HALF_INCLUDE_DIRS})
 include_directories(${CPPUNIT_INCLUDE_DIRS})
 include_directories(${PYTHON_INCLUDE_DIRS})
-include_directories(${BOOST_INCLUDE_DIRS})
+include_directories(${Boost_INCLUDE_DIRS})
 include_directories(${TBB_INCLUDE_DIRS})
 include_directories(${LOG4CPLUS_INCLUDES})
 include_directories(${ZLIB_INCLUDE_DIRS})
 
-include_directories(${PROJECT_SOURCE_DIR} )
+include_directories(${PROJECT_SOURCE_DIR})
 
 set(BOOST_LIBRARIES boost_iostreams boost_system)
 
