@@ -44,6 +44,8 @@ ExternalProject_Add(openvdb_src
 )
 add_dependencies(openvdb_src c-blosc_src)
 
+file(MAKE_DIRECTORY ${CATKIN_DEVEL_PREFIX}/include)
+
 install(DIRECTORY ${CATKIN_DEVEL_PREFIX}/include/openvdb
         DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION}
         FILES_MATCHING PATTERN "*.h"
